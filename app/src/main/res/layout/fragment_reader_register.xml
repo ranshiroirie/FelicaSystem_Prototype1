@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="readerViewModel"
+        type="com.ranshiroirie.felicaserverconnect.ui.reader.ReaderViewModel" />
+    <variable
+        name="fragmentReaderReqister"
+        type="com.ranshiroirie.felicaserverconnect.ui.reader.child.ReaderRegisterFragment" />
+</data>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.reader.child.ReaderRegisterFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/listview_reader_register"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="100dp"
+            android:elevation="5dp"
+            android:orientation="vertical"
+            android:paddingBottom="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Felicaデバイスの登録"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:text="ID"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView_reader_card_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:text="@{readerViewModel.readDevice.card_id}"
+                android:textSize="24dp" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:text="PMM"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView_reader_card_pmm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:text="@{readerViewModel.readDevice.card_pmm}"
+                android:textSize="24dp" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:text="SYS"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView_reader_card_sys"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:text="@{readerViewModel.readDevice.card_sys}"
+                android:textSize="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="機器名"
+                android:layout_marginTop="30dp"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="@={readerViewModel.inputtedDeviceName}"
+                android:hint="入力してください。"
+                android:inputType="text"
+                android:background="@color/listview_background_main"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/button_back_reader_get_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="戻る"
+            android:textColor="@color/textcolor_main"
+            android:backgroundTint="@color/listview_background_main"
+            app:layout_constraintTop_toBottomOf="@id/listview_reader_register"
+            app:layout_constraintStart_toStartOf="@id/listview_reader_register"
+            android:onClick="@{(v)-> fragmentReaderReqister.backToReaderMainFragment(v)}"/>
+
+        <Button
+            android:id="@+id/button_next_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登録"
+            android:clickable="false"
+            android:textColor="@color/textcolor_main"
+            android:backgroundTint="@color/listview_background_main"
+            app:layout_constraintTop_toBottomOf="@id/listview_reader_register"
+            app:layout_constraintEnd_toEndOf="@id/listview_reader_register"
+            android:onClick="@{(v)-> fragmentReaderReqister.showDialogConfirmRegister(v)}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
+</layout>

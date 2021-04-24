@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FelicaServerConnect</string>
+
+    <!--IPアドレス-->
+    <string name="api_client_url">192.168.3.9</string>
+    <string name="title_activity_felica_main">MainActivity</string>
+    <string name="title_home">リーダー</string>
+    <string name="title_dashboard">デバイスリスト</string>
+    <string name="title_notifications">設定</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="text_snackbar_loading">読み込み中</string>
+    <string name="text_snackbar_server_connect_error">接続に失敗しました</string>
+</resources>
